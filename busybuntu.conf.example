@@ -1,0 +1,9 @@
+[global]
+installationType=server # server or desktop
+
+[boot]
+dropbear-initramfs=true
+
+[users]
+shared:1501:1501:shared:sudo
+
