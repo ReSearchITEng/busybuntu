@@ -23,7 +23,7 @@ SET1_NANO_BUILD="build-essential procps curl file git"
 SET2="logtail xdotool dconf-cli apt-file xclip parcellite bat" #use batcat instead of "old" cat
 SET3="mc ansible gdebi-core poppler-utils" #gdebi-core poppler-utils for beyondcompare
 # Optionally SSHD server
-SET4_ZFS_SANOID_BACKUP="debhelper libcapture-tiny-perl libconfig-inifiles-perl pv lzop mbuffer build-essential"
+SET4_ZFS_SANOID_BACKUP="debhelper libcapture-tiny-perl libconfig-inifiles-perl pv lzop mbuffer lz4 build-essential"
 OPT1="openssh-server"
 
 if [ "${installation_type:-"server"}" == "desktop" ]; then
