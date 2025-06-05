@@ -1,5 +1,47 @@
 #!/usr/bin/env bash
-## FOR AMD64 ubuntu try to find repo: https://launchpad.net/ubuntu/+ppas?name_filter=zfs
+
+. ./001-helper-functions-library.sh
+. ./001-versions.sh
+
+echo $0
+
+# Check for configuration file
+if [ ! -f ./busybuntu.conf ]; then
+    echo "Configuration file 'busybuntu.conf' not found."
+    exit 1
+fi
+
+# Parse configuration file to check if zfs feature is enabled
+zfs_enabled="false"
+current_section=""
+
+while IFS='=' read -r key value; do
+    # Skip lines starting with a hash character
+    if [[ "$key" =~ ^# ]]; then
+        continue
+    fi
+
+    if [[ "$key" =~ ^\[(.*)\]$ ]]; then
+        current_section="${BASH_REMATCH[1]}"
+        continue
+    fi
+
+    case "$current_section" in
+        features)
+            if [[ "$key" == "zfs" ]]; then
+                zfs_enabled="$value"
+            fi
+            ;;
+    esac
+done < busybuntu.conf
+
+# Exit early if zfs is not enabled in configuration
+if [[ "$zfs_enabled" != "true" ]]; then
+    echo "$0: ZFS installation skipped - not enabled in configuration (features.zfs=false)"
+    exit 0
+fi
+
+echo "$0: Installing ZFS as requested in configuration..."
 
 set -e
 export DEBIAN_FRONTEND=noninteractive

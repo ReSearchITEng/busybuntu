@@ -29,5 +29,5 @@ curl -L https://github.com/dty1er/kubecolor/releases/download/v0.0.20/kubecolor_
 echo 'alias k=kubecolor' >>~/.bashrc
 
 # Install ktail
-brew install ktail k9s
+brew install k9s
 

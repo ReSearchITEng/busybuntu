@@ -28,13 +28,13 @@ Signed-By: /etc/apt/trusted.gpg.d/packages.microsoft.com.gpg
 
 EOF
 
-sudo apt-fast update -y 2>&1 || true
+# sudo apt-fast update -y 2>&1 || true
 
 if [[ $CHAT_CLIENTS == "disabled" ]]; then
   echo "$0: Opted out for chat clients. Exiting..."
   exit 0
 fi
-sudo apt-fast install -y teams
+sudo apt install -y teams
 
 echo "$0: teams proxy setup"
 sudo mkdir -p /usr/local/share/applications/

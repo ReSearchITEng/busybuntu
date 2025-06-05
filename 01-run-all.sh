@@ -34,4 +34,5 @@ for script in 0[2-9]-*.sh [1-9][0-9]-*.sh ; do
     fi
     echo $DATE > $RUN_STATUS_DIR/${script}.done
   fi
-  echo "#######################################
+  echo "#######################################"
+done

@@ -5,7 +5,12 @@
 
 echo $0
 
-sudo apt-fast update  -y|| true
+# sudo add-apt-repository ppa:apt-fast/stable -y
+# sudo apt update -y || true
+
+# sudo apt install -y apt-fast
+
+# sudo apt-fast update  -y|| true
 
 sudo unminimize -y || true
 

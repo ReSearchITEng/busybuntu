@@ -33,7 +33,7 @@ Architectures: amd64
 Signed-By: /etc/apt/trusted.gpg.d/download.docker.com.gpg
 EOF
 
-sudo apt-fast update  -y|| true
+# sudo apt-fast update  -y|| true
 sudo apt update  -y|| true
 
 sudo apt-get remove -y docker.io || true

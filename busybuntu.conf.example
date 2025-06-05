@@ -7,3 +7,7 @@ dropbear-initramfs=true
 [users]
 shared:1501:1501:shared:sudo
 
+[features]
+zfs=false
+postfix=false
+cloud-clis=false

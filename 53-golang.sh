@@ -6,4 +6,4 @@
 echo $0
 
 sudo add-apt-repository ppa:longsleep/golang-backports -y
-sudo apt install golang
+sudo apt install golang -y
