@@ -1,0 +1,43 @@
+cat > ~/.continue/config.json << 'EOF'
+{
+  "models": [
+    {
+      "title": "Qwen2 7B (Local Ollama)",
+      "provider": "ollama",
+      "model": "qwen2:7b-instruct-q4_K_M",
+      "apiBase": "http://localhost:11434"
+    },
+    {
+      "title": "Llama 3.1 8B (Local Ollama)",
+      "provider": "ollama", 
+      "model": "llama3.1:8b-instruct-q4_K_M",
+      "apiBase": "http://localhost:11434"
+    },
+    {
+      "title": "Mistral 7B (Local Ollama)",
+      "provider": "ollama",
+      "model": "mistral:7b-instruct-v0.3-q4_K_M", 
+      "apiBase": "http://localhost:11434"
+    }
+  ],
+  "tabAutocompleteModel": {
+    "title": "Qwen2 7B Autocomplete",
+    "provider": "ollama",
+    "model": "qwen2:7b-instruct-q4_K_M",
+    "apiBase": "http://localhost:11434"
+  },
+  "customCommands": [
+    {
+      "name": "test-ollama",
+      "prompt": "Test connection to Ollama. Respond with 'Ollama connection successful!' if you can see this.",
+      "description": "Test Ollama connection"
+    }
+  ],
+  "allowAnonymousTelemetry": false,
+  "embeddingsProvider": {
+    "provider": "ollama",
+    "model": "nomic-embed-text",
+    "apiBase": "http://localhost:11434"
+  }
+}
+EOF
